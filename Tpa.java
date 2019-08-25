@@ -23,7 +23,7 @@ public class TpaCMD implements CommandExecutor {
        Player p = (Player) sender;
        if(cmd.getName().equalsIgnoreCase("tpa")) {
          if(args.length == 1) {
-         Player a = Bukkit.getServer().getPlayer(args[0]);
+        	 Player a = Bukkit.getPlayer(args[0]);
          if (a == null) {
         	 p.sendMessage(ChatColor.RED + "Dieser Spieler ist nicht Online!");
         	 return true;
@@ -34,10 +34,11 @@ public class TpaCMD implements CommandExecutor {
  } else {
       a.sendMessage("§7Du hast eine Teleportationsanfrage von §6" + p.getName() + " §7erhalten.");
       p.sendMessage(" §7Du hast eine Teleportationsanfrage an §6" + a.getName() + " §7gesendet.");
-      if(tpa.containsKey(a)) {
-      tpa.remove(a);
-      tpa.put(p, a.getUniqueId());
-      }
+      if (tpa.get(p) == null) {
+          tpa.put(p, a.getUniqueId());
+          } 
+    
+           p.sendMessage("Variabeln: "+p.toString()+" "+a.toString()+" Ergebnis Hashmap: "+tpa.get(p));
    } 
      }else{
        p.sendMessage("§cFalsche Benutzung: /tpa (Spieler)");
@@ -47,23 +48,25 @@ public class TpaCMD implements CommandExecutor {
  
        if(cmd.getName().equalsIgnoreCase("tpaccept")) {
            if(args.length == 0) {
-           if(tpa.containsKey(p)) {
+        	   if (tpa.get(p) != a.getUniqueId()) {
               UUID a = tpa.get(p);
               Bukkit.getPlayer(a);
               Bukkit.getPlayer(a).teleport(p);
               p.sendMessage("§6" + Bukkit.getPlayer(a).getName() + " §7hat die Anfrage §aangenommen.");
                Bukkit.getPlayer(a).sendMessage("§7Du wurdest zu §6" + p.getName() + " §7teleportiert");
                 tpa.remove(p);
-          }else{
+          } else {
        p.sendMessage("§7Keine §aTeleportationsanfragen §7gefunden");
         return true;
         }
     }else{
    p.sendMessage("§cFalsche Benutzung! /tpaccept");
+   p.sendMessage("§cVariabeln:"+tpa.get(p));
+   return true;
             }
          }
  
 	  }
- return true;
+ return false;
    }
 }  
