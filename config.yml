@@ -1,0 +1,53 @@
+Dies ist die Konfigurationsdatei von NikesEssentials: ''
+Spawn:
+  World: world
+  X: -319.5987902803238
+  Y: 60.0
+  Z: -95.54252051626635
+  Yaw: -169.11862
+  Pitch: 24.051811
+Info:
+  Version:
+  - !!org.bukkit.craftbukkit.v1_14_R1.CraftWorld
+    PVP: true
+    ambientSpawnLimit: 15
+    animalSpawnLimit: 10
+    autoSave: true
+    difficulty: EASY
+    fullTime: 231777
+    keepSpawnInMemory: true
+    monsterSpawnLimit: 70
+    thunderDuration: 121833
+    thundering: false
+    time: 15777
+    waterAnimalSpawnLimit: 15
+    weatherDuration: 140689
+  - !!org.bukkit.craftbukkit.v1_14_R1.CraftWorld
+    PVP: true
+    ambientSpawnLimit: 15
+    animalSpawnLimit: 10
+    autoSave: true
+    difficulty: EASY
+    fullTime: 231777
+    keepSpawnInMemory: true
+    monsterSpawnLimit: 70
+    thunderDuration: 0
+    thundering: false
+    time: 15777
+    waterAnimalSpawnLimit: 15
+    weatherDuration: 0
+  - !!org.bukkit.craftbukkit.v1_14_R1.CraftWorld
+    PVP: true
+    ambientSpawnLimit: 15
+    animalSpawnLimit: 10
+    autoSave: true
+    difficulty: EASY
+    fullTime: 231777
+    keepSpawnInMemory: true
+    monsterSpawnLimit: 70
+    thunderDuration: 0
+    thundering: false
+    time: 15777
+    waterAnimalSpawnLimit: 15
+    weatherDuration: 0
+  Credits: von Nike_Schuh Discord Nike#1817
